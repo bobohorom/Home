@@ -80,7 +80,10 @@
       //const endp = 'http://127.0.0.1:5000';
       const endp = 'https://bobohorom.pythonanywhere.com/';
       const response = await fetch(endp,{
-                                  body : formData,
+                                  body : formData,  
+                                  headers: {
+                                    'Content-Type': 'application/json',
+                                  }
         method : 'POST'
       });
       
