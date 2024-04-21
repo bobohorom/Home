@@ -18,9 +18,10 @@
     try {
       console.log('try fetch');
       const response = await fetch('https://bobohorom.pythonanywhere.com/',{
-                                  method : "POST",
-                                  body : formData
+                                  method : "POST"
       });
+      /*,
+                                  body : formData*/
       console.log('wait response');
       const result = await response.json();
       document.getElementById("res").textContent = `Result : ${result.result}`;
