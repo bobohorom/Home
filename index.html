@@ -23,8 +23,11 @@
       /*,
                                   body : formData*/
       console.log('wait response');
-      const result = await response.json();
+      /*const result = await response.json();
       document.getElementById("res").textContent = `Result : ${result.result}`;
+      */
+      const result = await response.text();
+      document.getElementById("res").textContent = `Result : ${result}`;
     } catch (error) {
       console.error('Error',error);
       alert("Fail");
