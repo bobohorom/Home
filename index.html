@@ -2,13 +2,72 @@
 <html>
 <head>
 <title>Home Page</title>
+<style>
+  body {
+    background-color: #f0f0f0; /* Couleur de fond de la page */
+  }
+  h1 {
+    color: #333; /* Couleur du texte pour les h1 */
+  }
+  p {
+    color: #666; /* Couleur du texte pour les paragraphes */
+  }
+  ul li {
+    color: #007bff; /* Couleur du texte pour les éléments de liste */
+  }
+  /* Style de base pour les cartes */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px; /* Bordures arrondies */
+    background-color: #fff; /* Fond blanc */
+    margin: 10px; /* Marge extérieure pour éviter que les cartes se touchent */
+  }
+
+  /* Ajoute un effet de survol pour la carte */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  .card-container {
+    padding: 2px 16px; /* Espacement à l'intérieur de la carte */
+  }
+</style>
 </head>
 <body>
 
-<h1>Home5</h1>
+<h1>Home</h1>
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+  <li>Item 4</li>
+  <li>Item 5</li>
+  <li>Item 6</li>
+  <li>Item 7</li>
+  <li>Item 8</li>
+  <li>Item 9</li>
+  <li>Item 10</li>
+</ul>
+<p>A venir...</p>
+
+<div class="card">
+  <div class="card-container">
+    <h4><b>Titre de la carte</b></h4> 
+    <p>Description de la carte</p> 
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-container">
+    <h4><b>Titre de la carte 2</b></h4> 
+    <p>Description de la carte 2</p> 
+  </div>
+</div>
 
 <button onClick="testget()">GET</button>
-  <button onClick="testit()">POST</button>
+<button onClick="testit()">POST</button>
 <p id="res"></p>
 <script type="text/javascript">
   async function testit() {
@@ -28,7 +87,7 @@
       /*const result = await response.text();*/
       const result = await response.json();
       //document.getElementById("res").textContent = `Result : ${result}`;
-      document.getElementById("res").textContent = `Result : ${result.result}`;
+      document.getElementById("res").textContent = `POST Result : ${result.result}`;
     } catch (error) {
       console.log(error);
       alert("Fail");
@@ -46,12 +105,15 @@
         method : 'GET'
       });
       
-
-      console.log('wait response');
-      /*const result = await response.text();*/
+      // alert(response);
       const result = await response.json();
+      console.log(result);
+      // console.log('wait response');
+      /*const result = await response.text();*/
+      // const result = await response;
       //document.getElementById("res").textContent = `Result : ${result}`;
-      document.getElementById("res").textContent = `Result : ${result.result}`;
+      //alert(result);
+      document.getElementById("res").textContent = `GET Result : ${result.result}`;
     } catch (error) {
       console.log(error);
       alert("Fail");
@@ -59,5 +121,6 @@
   }
   
 </script>
+
 </body>
 </html>
