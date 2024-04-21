@@ -41,16 +41,7 @@
 <ul>
   <li>Item 1</li>
   <li>Item 2</li>
-  <li>Item 3</li>
-  <li>Item 4</li>
-  <li>Item 5</li>
-  <li>Item 6</li>
-  <li>Item 7</li>
-  <li>Item 8</li>
-  <li>Item 9</li>
-  <li>Item 10</li>
 </ul>
-<p>A venir...</p>
 
 <div class="card">
   <div class="card-container">
@@ -74,17 +65,18 @@
     const res = document.getElementById("res");
     const formData = new FormData();
     formData.append('title' , 'Hello');
-    
+    const donnees = { title: ' arg OK', arg2: 'valeur2' };
     try {
       console.log('try fetch');
-      //const endp = 'http://127.0.0.1:5000';
+      // const endp = 'http://127.0.0.1:5000';
       const endp = 'https://bobohorom.pythonanywhere.com/';
       const response = await fetch(endp,{
-                                  body : formData,  
-                                  headers: {
-                                    'Content-Type': 'application/json',
-                                  },
-                                  method : 'POST'
+                                  body : JSON.stringify(donnees),
+                                  // body : formData,
+        method : 'POST',
+        headers: {
+          'Content-Type': 'application/json'  // Indiquer que le contenu est JSON
+        }
       });
       
 
@@ -108,7 +100,7 @@
       // const endp = 'http://127.0.0.1:5000';
       const endp = 'https://bobohorom.pythonanywhere.com/';
       const response = await fetch(endp,{
-                                  body : formData,
+                                  // body : formData,
         method : 'GET'
       });
       
