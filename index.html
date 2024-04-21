@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<h1>Home</h1>
+<h1>Home2</h1>
 
 <button onClick="testit()">Test</button>
 <p id="res"></p>
@@ -29,7 +29,7 @@
       const result = await response.text();
       document.getElementById("res").textContent = `Result : ${result}`;
     } catch (error) {
-      console.error('Error',error);
+      console.error(error);
       alert("Fail");
     }
   }
